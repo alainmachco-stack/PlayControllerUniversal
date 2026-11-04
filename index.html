@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+
+	<title>PlayController Universal</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+	<h1>PLAY CONTROLLER UNIVERSAL</h1>
+	<p>Tu mando virtual para videojuegos</p>
+</header>
+
+<main>
+
+	<section class="mando">
+
+		<!-- GATILLOS -->
+		
+<div class="gatillos gatillos-izquierda">
+    <button>L2</button>
+    <button>L1</button>
+</div>
+
+<div class="gatillos gatillos-derecha">
+    <button>R2</button>
+    <button>R1</button>
+</div>
+
+
+		<!-- BOTONES CENTRALES -->
+		<div class="centro">
+			<button>SELECT</button>
+			<button>⌂</button>
+			<button>START</button>
+		</div>
+
+		<!-- CRUCETA -->
+		<div class="cruceta">
+			<button class="arriba">↑</button>
+			<button class="izquierda">←</button>
+			<button class="derecha">→</button>
+			<button class="abajo">↓</button>
+		</div>
+
+		<!-- JOYSTICK IZQUIERDO -->
+		<div class="joystick joystick-izquierdo"
+			 id="joystick-izquierdo">
+			<div class="palanca"></div>
+		</div>
+
+		<!-- JOYSTICK DERECHO -->
+		<div class="joystick joystick-derecho"
+			 id="joystick-derecho">
+			<div class="palanca"></div>
+		</div>
+
+		<!-- BOTONES A B X Y -->
+		<div class="acciones">
+			<button class="y">Y</button>
+			<button class="x">X</button>
+			<button class="b">B</button>
+			<button class="a">A</button>
+		</div>
+
+	</section>
+
+	<p id="estado">Mando listo</p>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

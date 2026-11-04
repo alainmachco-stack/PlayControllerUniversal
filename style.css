@@ -1,0 +1,422 @@
+/* PLAY CONTROLLER UNIVERSAL */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	min-height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100dvh;
+	background: linear-gradient(135deg, #101827, #263653);
+	color: white;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	padding: 12px;
+}
+
+header h1 {
+	font-size: clamp(16px, 3vw, 32px);
+	letter-spacing: 2px;
+	margin: 10px 0;
+}
+
+header p {
+	color: #b8c8e2;
+	margin: 8px 0;
+}
+
+main {
+	width: 100%;
+	max-width: 1050px;
+	margin: 22px auto;
+}
+
+.mando {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 2.5 / 1;
+	background: linear-gradient(145deg, #dce5f3, #91a2bf);
+	border: 5px solid #617492;
+	border-radius: 16% / 35%;
+	box-shadow: 0 20px 40px #0008;
+	overflow: hidden;
+}
+
+/* BOTONES */
+
+button {
+	background: linear-gradient(145deg, #273a58, #101a2c);
+	border: 2px solid #526987;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+}
+
+button:active,
+button.pulsado {
+	background: #168cff;
+	box-shadow: 0 0 12px #168cff;
+}
+
+/* GATILLOS */
+
+.gatillos {
+	position: absolute;
+	top: 5%;
+	width: 18%;
+	height: 23%;
+	display: flex;
+	flex-direction: column;
+	gap: 6%;
+}
+
+.gatillos-izquierda {
+	left: 5%;
+}
+
+.gatillos-derecha {
+	right: 5%;
+}
+
+.gatillos button {
+	width: 100%;
+	flex: 1;
+	min-height: 0;
+	border-radius: 15px;
+	font-size: clamp(9px, 1.8vw, 20px);
+}
+
+/* CENTRO */
+
+.centro {
+	position: absolute;
+	top: 23%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	width: 38%;
+}
+
+.centro button {
+	flex: 1;
+	min-width: 0;
+	height: clamp(22px, 4vw, 48px);
+	border-radius: 30px;
+	font-size: clamp(8px, 1.3vw, 14px);
+}
+
+.centro button:nth-child(2) {
+	flex: 0 0 20%;
+	font-size: clamp(13px, 2vw, 23px);
+}
+
+/* CRUCETA */
+
+.cruceta {
+	position: absolute;
+	left: 6%;
+	top: 37%;
+	width: 20%;
+	height: 45%;
+}
+
+.cruceta button {
+	position: absolute;
+	width: 33%;
+	height: 33%;
+	border-radius: 12px;
+	font-size: clamp(14px, 3vw, 28px);
+}
+
+.cruceta .arriba {
+	top: 0;
+	left: 33.5%;
+}
+
+.cruceta .izquierda {
+	top: 33.5%;
+	left: 0;
+}
+
+.cruceta .derecha {
+	top: 33.5%;
+	right: 0;
+}
+
+.cruceta .abajo {
+	bottom: 0;
+	left: 33.5%;
+}
+
+/* JOYSTICKS */
+
+.joystick {
+	position: absolute;
+	top: 52%;
+	width: 17%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 4px solid #4394ff;
+	background: radial-gradient(circle, #263752, #101827);
+	box-shadow: 0 0 12px #258aff88;
+	display: grid;
+	place-items: center;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.joystick-izquierdo {
+	left: 28%;
+}
+
+.joystick-derecho {
+	right: 28%;
+}
+
+.palanca {
+	width: 62%;
+	height: 62%;
+	border-radius: 50%;
+	background: radial-gradient(circle, #435675, #172238);
+	border: 3px solid #536b90;
+	box-shadow: 0 3px 9px #0008;
+	transform: translate(0, 0);
+	pointer-events: none;
+	will-change: transform;
+}
+
+/* BOTONES A B X Y */
+
+.acciones {
+	position: absolute;
+	right: 6%;
+	top: 37%;
+	width: 20%;
+	height: 45%;
+}
+
+.acciones button {
+	position: absolute;
+	width: 33%;
+	height: 33%;
+	border-radius: 50%;
+	font-size: clamp(14px, 3vw, 26px);
+}
+
+.acciones .y {
+	top: 0;
+	left: 33.5%;
+	color: #ffcf30;
+}
+
+.acciones .x {
+	top: 33.5%;
+	left: 0;
+	color: #33aaff;
+}
+
+.acciones .b {
+	top: 33.5%;
+	right: 0;
+	color: #ff6262;
+}
+
+.acciones .a {
+	bottom: 0;
+	left: 33.5%;
+	color: #72ff65;
+}
+
+/* ESTADO */
+
+#estado {
+	color: #69ccff;
+	font-size: 18px;
+	margin-top: 18px;
+}
+
+/* IPHONE HORIZONTAL */
+
+@media (orientation: landscape) and (max-height: 500px) {
+	body {
+		padding: 4px;
+	}
+
+	header h1 {
+		font-size: 14px;
+		margin: 3px;
+	}
+
+	header p {
+		display: none;
+	}
+
+	main {
+		width: min(100%, 220vh);
+		margin: 5px auto;
+	}
+
+	#estado {
+		font-size: 12px;
+		margin: 5px;
+	}
+}
+
+/* POSICIÓN DEFINITIVA DE GATILLOS */
+
+.mando .gatillos.gatillos-izquierda {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	right: auto;
+	width: 18%;
+	height: 23%;
+	display: flex;
+	flex-direction: column;
+	gap: 6%;
+}
+
+.mando .gatillos.gatillos-derecha {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	left: auto;
+	width: 18%;
+	height: 23%;
+	display: flex;
+	flex-direction: column;
+	gap: 6%;
+}
+
+.mando .gatillos button {
+	width: 100%;
+	flex: 1;
+	min-height: 0;
+	border-radius: 15px;
+}
+
+/* ADAPTACIÓN PARA IPHONE HORIZONTAL */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+	body {
+		padding: 4px;
+		overflow-x: hidden;
+	}
+
+	header {
+		display: none;
+	}
+
+	main {
+		width: 100%;
+		max-width: min(96vw, 210vh);
+		margin: 4px auto;
+	}
+
+	.mando {
+		width: 100%;
+		aspect-ratio: 2.5 / 1;
+		border-width: 3px;
+	}
+
+	.joystick {
+		border-width: 2px;
+	}
+
+	.palanca {
+		border-width: 2px;
+	}
+
+	#estado {
+		font-size: 12px;
+		margin: 5px 0;
+	}
+}
+
+/* MODO PANTALLA COMPLETA EN IPHONE HORIZONTAL */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  header,
+  #estado {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    margin: 0;
+    padding: 1vh 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mando {
+    width: min(98vw, 245vh);
+    height: auto;
+    max-height: 96dvh;
+    aspect-ratio: 2.5 / 1;
+    border-width: 3px;
+  }
+}
+
+/* OCULTAR TITULO Y MENSAJE */
+
+header {
+	display: none !important;
+}
+
+#estado {
+	display: none !important;
+}
+
+/* CENTRAR EL MANDO */
+
+body {
+	min-height: 100dvh;
+	padding: 0;
+}
+
+main {
+	width: 100%;
+	max-width: none;
+	min-height: 100dvh;
+	margin: 0;
+	padding: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mando {
+	width: min(98vw, 245vh);
+	max-height: 96dvh;
+	aspect-ratio: 2.5 / 1;
+	flex-shrink: 0;
+}
+
