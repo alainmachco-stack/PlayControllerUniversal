@@ -459,3 +459,37 @@ main {
 	}
 }
 
+/* MENSAJE CUANDO EL IPHONE ESTA VERTICAL */
+
+@media screen and (orientation: portrait) {
+    body {
+        background: #101827;
+    }
+
+    main {
+        display: none !important;
+    }
+
+    body::after {
+        content: "🎮 Gira tu iPhone para comenzar a jugar";
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        color: white;
+        background: #101827;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        z-index: 9999;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    body::after {
+        display: none;
+    }
+}
+
