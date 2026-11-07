@@ -145,3 +145,25 @@ configurarJoystick(
 	"joystick-derecho",
 	"Joystick derecho"
 );
+
+/* BOTON PARA INTENTAR GIRAR LA PANTALLA */
+
+const botonGirar = document.getElementById("boton-girar");
+const ayudaGiro = document.getElementById("ayuda-giro");
+
+if (botonGirar) {
+    botonGirar.addEventListener("click", async () => {
+        try {
+            if (!screen.orientation?.lock) {
+                throw new Error("No compatible");
+            }
+
+            await screen.orientation.lock("landscape");
+
+            ayudaGiro.textContent = "";
+        } catch (error) {
+            ayudaGiro.textContent =
+                "Gira tu iPhone físicamente para jugar en horizontal.";
+        }
+    });
+}

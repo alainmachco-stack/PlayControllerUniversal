@@ -493,3 +493,56 @@ main {
     }
 }
 
+/* AVISO Y BOTON PARA GIRAR EL IPHONE */
+
+#aviso-giro {
+    display: none;
+}
+
+@media screen and (orientation: portrait) {
+    body::after {
+        display: none !important;
+    }
+
+    #aviso-giro {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 25px;
+        background: #101827;
+        color: white;
+        text-align: center;
+    }
+
+    #aviso-giro p {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #boton-girar {
+        padding: 16px 25px;
+        border-radius: 15px;
+        background: #258aff;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #ayuda-giro {
+        font-size: 15px !important;
+        font-weight: normal !important;
+        color: #b8c8e2;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    #aviso-giro {
+        display: none !important;
+    }
+}
+
